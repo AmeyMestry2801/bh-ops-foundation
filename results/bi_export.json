@@ -1,0 +1,117 @@
+{
+  "files": {
+    "appointment_flat.csv": {
+      "rows": 125803,
+      "columns": 29
+    },
+    "dim_clinic.csv": {
+      "rows": 12,
+      "columns": 4
+    },
+    "dim_date.csv": {
+      "rows": 730,
+      "columns": 10
+    },
+    "dim_patient.csv": {
+      "rows": 15000,
+      "columns": 16
+    },
+    "dim_provider.csv": {
+      "rows": 60,
+      "columns": 4
+    },
+    "dq_integrity.csv": {
+      "rows": 14,
+      "columns": 3
+    },
+    "dq_issues.csv": {
+      "rows": 16,
+      "columns": 5
+    },
+    "dq_reconciliation.csv": {
+      "rows": 9,
+      "columns": 9
+    },
+    "experiment_arm_rates.csv": {
+      "rows": 3,
+      "columns": 10
+    },
+    "experiment_guardrails.csv": {
+      "rows": 6,
+      "columns": 10
+    },
+    "experiment_results.csv": {
+      "rows": 9,
+      "columns": 13
+    },
+    "experiment_subgroups.csv": {
+      "rows": 22,
+      "columns": 11
+    },
+    "fact_appointment.csv": {
+      "rows": 125803,
+      "columns": 20
+    },
+    "fact_claim.csv": {
+      "rows": 84639,
+      "columns": 14
+    },
+    "fact_prior_auth.csv": {
+      "rows": 5227,
+      "columns": 10
+    },
+    "fairness_slices.csv": {
+      "rows": 10,
+      "columns": 8
+    },
+    "kpi_denials_by_reason.csv": {
+      "rows": 34,
+      "columns": 8
+    },
+    "kpi_funnel.csv": {
+      "rows": 5,
+      "columns": 5
+    },
+    "kpi_gate_conversion.csv": {
+      "rows": 6,
+      "columns": 5
+    },
+    "kpi_monthly.csv": {
+      "rows": 223,
+      "columns": 8
+    },
+    "kpi_prior_auth_monthly.csv": {
+      "rows": 32,
+      "columns": 10
+    },
+    "kpi_validation.csv": {
+      "rows": 21,
+      "columns": 3
+    },
+    "lift_table.csv": {
+      "rows": 20,
+      "columns": 9
+    },
+    "model_scores.csv": {
+      "rows": 40914,
+      "columns": 14
+    },
+    "model_test_metrics.csv": {
+      "rows": 3,
+      "columns": 10
+    },
+    "outreach_simulation.csv": {
+      "rows": 4,
+      "columns": 6
+    },
+    "pipeline_stages.csv": {
+      "rows": 3,
+      "columns": 2
+    },
+    "pipeline_summary.csv": {
+      "rows": 15,
+      "columns": 2
+    }
+  },
+  "all_ok": true
+}

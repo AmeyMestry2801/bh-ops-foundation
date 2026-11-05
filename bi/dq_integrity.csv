@@ -1,0 +1,15 @@
+check,violations,status
+fact_appointment duplicate keys,0,PASS
+fact_claim duplicate keys,0,PASS
+fact_prior_auth duplicate keys,0,PASS
+dim_patient duplicate keys,0,PASS
+fact_appointment -> dim_patient orphans,0,PASS
+fact_appointment -> dim_provider orphans,0,PASS
+fact_appointment -> dim_date orphans,0,PASS
+fact_claim -> fact_appointment orphans,0,PASS
+fact_claim -> dim_patient orphans,0,PASS
+fact_prior_auth -> dim_patient orphans,0,PASS
+appointments before patient created,0,PASS
+claims violating paid <= allowed <= billed,0,PASS
+prior auth decided before submitted,0,PASS
+negative lead_days,0,PASS

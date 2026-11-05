@@ -1,0 +1,149 @@
+{
+  "synthetic": true,
+  "decisions": {
+    "arm_a": {
+      "decision": "SHIP",
+      "reason": "significant reduction of at least the 2 pp threshold and no guardrail breach",
+      "guardrail_breaches": []
+    },
+    "arm_b": {
+      "decision": "ITERATE",
+      "reason": "significant reduction, but the estimated reduction is smaller than the 2 pp practical threshold and guardrail breach: Cancellation rate (cancelled / all scheduled); Late-cancel rate (late cancels / resolved)",
+      "guardrail_breaches": [
+        "Cancellation rate (cancelled / all scheduled)",
+        "Late-cancel rate (late cancels / resolved)"
+      ]
+    }
+  },
+  "power": {
+    "baseline": 0.22,
+    "mde_abs": 0.02,
+    "alpha": 0.05,
+    "power": 0.8,
+    "comparisons": 3,
+    "alpha_holm_first_step": 0.016666666666666666,
+    "pre_period_observed_baseline": 0.22113978026082357,
+    "icc_pre_period": 0.08310765472054094,
+    "m_eff": 5.163478860822569,
+    "mean_resolved_per_patient": 4.033861615771164,
+    "design_effect": 1.3460169636015131,
+    "n_per_arm_independent_alpha05": 6506.721299775401,
+    "n_per_arm_independent_holm": 8678.89554519816,
+    "required_appts_per_arm_clustered_holm": 11681.940629162325,
+    "required_patients_per_arm_holm": 2895.9696047800735,
+    "available_resolved_appts_per_arm": {
+      "control": 17617,
+      "arm_a": 17265,
+      "arm_b": 17296
+    },
+    "available_patients_per_arm": {
+      "control": 4382,
+      "arm_a": 4210,
+      "arm_b": 4343
+    },
+    "effective_n_per_arm_available": 12826.732847262454,
+    "mde_available_holm": 0.016503112919326546,
+    "mde_available_alpha05": 0.014317052364402016,
+    "power_holm_at_3pp": 0.9998155039616533,
+    "power_holm_at_2pp": 0.9381630977956007,
+    "power_holm_at_1.5pp": 0.7064387793716153
+  },
+  "validity": {
+    "srm_assigned": {
+      "observed": {
+        "control": 4426,
+        "arm_a": 4241,
+        "arm_b": 4392
+      },
+      "chi2": 4.455318171376063,
+      "p": 0.10778043982830943,
+      "alarm": false
+    },
+    "srm_analysis": {
+      "observed": {
+        "control": 4421,
+        "arm_a": 4239,
+        "arm_b": 4389
+      },
+      "chi2": 4.34117556900912,
+      "p": 0.11411052479663295,
+      "alarm": false
+    },
+    "balance": {
+      "max_abs_smd": 0.05656027783082915,
+      "max_cov": "age_band_50-64, arm_a vs control",
+      "n_flagged": 0,
+      "n_total": 52
+    },
+    "omnibus": {
+      "lr_chi2": 86.50437326991232,
+      "df": 64,
+      "p": 0.03201567246305151
+    },
+    "integrity": {
+      "in_window_labelled_standard": 0,
+      "outside_window_labelled_arm": 0,
+      "arm_differs_from_assignment": 0
+    }
+  },
+  "interaction": {
+    "coefs": [
+      {
+        "term": "a",
+        "coef": -0.027506490793766873,
+        "ci_low": -0.039455508395075785,
+        "ci_high": -0.015557473192457963,
+        "p_raw": 6.427588674288153e-06
+      },
+      {
+        "term": "b",
+        "coef": -0.012473892866629413,
+        "ci_low": -0.02465429149817635,
+        "ci_high": -0.0002934942350824761,
+        "p_raw": 0.044729379755131894
+      },
+      {
+        "term": "a_med",
+        "coef": -0.018708200569719828,
+        "ci_low": -0.03941946690876758,
+        "ci_high": 0.002003065769327926,
+        "p_raw": 0.0766591360110903
+      },
+      {
+        "term": "b_med",
+        "coef": -0.018633770652450584,
+        "ci_low": -0.03966567306745795,
+        "ci_high": 0.0023981317625567794,
+        "p_raw": 0.08247864935850602
+      },
+      {
+        "term": "a_long",
+        "coef": 0.000617264880225466,
+        "ci_low": -0.018346298073834432,
+        "ci_high": 0.01958082783428536,
+        "p_raw": 0.9491319296794747
+      },
+      {
+        "term": "b_long",
+        "coef": -0.002256965922900024,
+        "ci_low": -0.021566299740127286,
+        "ci_high": 0.01705236789432724,
+        "p_raw": 0.8187991009314706
+      }
+    ],
+    "joint_tests": [
+      {
+        "modifier": "Medicaid",
+        "wald_chi2": 4.026668761132673,
+        "p_raw": 0.13354264945802333,
+        "p_holm": 0.26708529891604665
+      },
+      {
+        "modifier": "Long lead (> 14 days)",
+        "wald_chi2": 0.09774635745639228,
+        "p_raw": 0.9523018941779514,
+        "p_holm": 0.9523018941779514
+      }
+    ]
+  }
+}

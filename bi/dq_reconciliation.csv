@@ -1,0 +1,10 @@
+table,raw,staging,mart,duplicates_removed,expected_duplicates,mart_excluded,expected_mart_excluded,ok
+clinics,12,12,12.0,0,0,0.0,0.0,True
+providers,60,60,60.0,0,0,0.0,0.0,True
+patients,15150,15000,15000.0,150,150,0.0,0.0,True
+intake,15000,15000,,0,0,,,True
+eligibility_checks,16613,16449,,164,164,,,True
+prior_authorizations,5244,5244,5227.0,0,0,17.0,17.0,True
+appointments,127984,126717,125803.0,1267,1267,914.0,914.0,True
+claims,86540,85683,84639.0,857,857,1044.0,1044.0,True
+experiment_assignments,13059,13059,,0,0,,,True

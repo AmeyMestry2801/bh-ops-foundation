@@ -1,0 +1,167 @@
+version: 2
+
+models:
+  - name: stg_clinics
+    columns:
+      - name: clinic_id
+        data_tests: [unique, not_null]
+
+  - name: stg_providers
+    columns:
+      - name: provider_id
+        data_tests: [unique, not_null]
+      - name: clinic_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_clinics')
+                field: clinic_id
+      - name: provider_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [psychiatrist, NP, therapist]
+
+  - name: stg_patients
+    columns:
+      - name: patient_id
+        data_tests: [unique, not_null]
+      - name: clinic_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_clinics')
+                field: clinic_id
+      - name: payer_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [Medicaid, Medicare, Commercial, Self-pay, Unknown]
+      - name: age_band
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["18-24", "25-34", "35-49", "50-64", "65+"]
+
+  - name: stg_intake
+    columns:
+      - name: intake_id
+        data_tests: [unique, not_null]
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_patients')
+                field: patient_id
+      - name: acuity
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [low, moderate, high]
+
+  - name: stg_eligibility_checks
+    columns:
+      - name: eligibility_id
+        data_tests: [unique, not_null]
+      - name: patient_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_patients')
+                field: patient_id
+
+  - name: stg_prior_authorizations
+    columns:
+      - name: pa_id
+        data_tests: [unique, not_null]
+      - name: patient_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_patients')
+                field: patient_id
+              config:
+                severity: warn
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [approved, denied, pending]
+      - name: urgency
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [urgent, standard]
+
+  - name: stg_appointments
+    columns:
+      - name: appointment_id
+        data_tests: [unique, not_null]
+      - name: patient_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_patients')
+                field: patient_id
+              config:
+                severity: warn
+      - name: provider_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_providers')
+                field: provider_id
+              config:
+                severity: warn
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [completed, no_show, cancelled, late_cancel]
+      - name: modality
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [telehealth, in_person]
+      - name: reminder_arm
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [standard, control, arm_a, arm_b]
+
+  - name: stg_claims
+    columns:
+      - name: claim_id
+        data_tests: [unique, not_null]
+      - name: appointment_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_appointments')
+                field: appointment_id
+              config:
+                severity: warn
+      - name: claim_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [paid, denied, pending]
+
+  - name: stg_experiment_assignments
+    columns:
+      - name: assignment_id
+        data_tests: [unique, not_null]
+      - name: patient_id
+        data_tests:
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_patients')
+                field: patient_id
+      - name: arm
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [control, arm_a, arm_b]

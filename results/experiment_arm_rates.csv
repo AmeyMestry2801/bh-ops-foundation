@@ -1,0 +1,4 @@
+arm,label,patients_scheduled,patients_resolved,scheduled_appts,resolved_appts,no_shows,no_show_rate,ci_low_cluster,ci_high_cluster
+control,Control (standard SMS 24h),4421,4382,19135,17617,3870,0.21967417835045694,0.21258259716708014,0.22676575953382935
+arm_a,Arm A (AI voice 48h + SMS),4239,4210,18717,17265,3215,0.18621488560671878,0.1795688392853145,0.19286093192811973
+arm_b,Arm B (two-way SMS + reschedule link),4389,4343,19222,17296,3467,0.20045097132284923,0.19360235826512037,0.20729958438057797

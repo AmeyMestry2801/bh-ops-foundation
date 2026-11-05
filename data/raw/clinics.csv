@@ -1,0 +1,13 @@
+clinic_id,city,state,timezone
+C01,Buffalo,NY,America/New_York
+C02,Rochester,NY,America/New_York
+C03,Albany,NY,America/New_York
+C04,Syracuse,NY,America/New_York
+C05,Cleveland,OH,America/New_York
+C06,Chicago,IL,America/Chicago
+C07,Minneapolis,MN,America/Chicago
+C08,Dallas,TX,America/Chicago
+C09,Denver,CO,America/Denver
+C10,Phoenix,AZ,America/Phoenix
+C11,Seattle,WA,America/Los_Angeles
+C12,Sacramento,CA,America/Los_Angeles

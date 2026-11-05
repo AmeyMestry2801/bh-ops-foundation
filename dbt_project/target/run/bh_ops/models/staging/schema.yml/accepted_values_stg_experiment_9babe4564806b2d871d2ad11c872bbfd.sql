@@ -1,0 +1,36 @@
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        arm as value_field,
+        count(*) as n_records
+
+    from "ops"."staging"."stg_experiment_assignments"
+    group by arm
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'control','arm_a','arm_b'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test

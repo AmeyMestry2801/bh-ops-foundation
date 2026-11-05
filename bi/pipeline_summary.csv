@@ -1,0 +1,16 @@
+metric,value
+run_at,2026-10-14T11:35:19
+mode,full
+total_seconds,6.21
+dbt_pass,115
+dbt_warn,4
+dbt_error,0
+dbt_skip,0
+dbt_no_op,0
+dbt_reused,0
+dbt_total,119
+dbt_models,27
+dbt_tests,92
+dq_passed,True
+dq_issue_types_found,16
+dq_integrity_failed,0

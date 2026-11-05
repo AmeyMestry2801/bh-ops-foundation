@@ -1,0 +1,134 @@
+{
+  "kpis_validated": 21,
+  "passed": 21,
+  "capacity_multiplier": 1.7,
+  "leakage_max_month": "2026-03",
+  "results": [
+    {
+      "kpi": "no-show / late-cancel (monthly)",
+      "rows": 18,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "fill rate (monthly)",
+      "rows": 18,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "intake -> first visit (per patient)",
+      "rows": 15000,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "intake -> first visit (monthly)",
+      "rows": 15,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "patient funnel",
+      "rows": 5,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "gate conversion",
+      "rows": 6,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "prior-auth turnaround / SLA (monthly)",
+      "rows": 32,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "clean-claim / denial (monthly)",
+      "rows": 18,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "denials by reason and payer",
+      "rows": 34,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "days in A/R (monthly)",
+      "rows": 18,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "revenue leakage (monthly)",
+      "rows": 15,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: no_show_rate",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: late_cancel_rate",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: mean_days_intake_to_first_visit",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: median_days_intake_to_first_visit",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: pa_sla_breach_rate",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: pa_median_turnaround_hours",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: clean_claim_rate",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: first_pass_denial_rate",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: mean_days_in_ar",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "kpi": "headline: revenue_leakage_rate_mature",
+      "rows": 1,
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

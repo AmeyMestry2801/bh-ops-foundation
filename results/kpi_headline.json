@@ -1,0 +1,12 @@
+{
+  "no_show_rate": 0.21298051537735768,
+  "late_cancel_rate": 0.04073506626156656,
+  "mean_days_intake_to_first_visit": 31.459366852886404,
+  "median_days_intake_to_first_visit": 18.0,
+  "pa_sla_breach_rate": 0.21197627702314903,
+  "pa_median_turnaround_hours": 95.76027777777777,
+  "clean_claim_rate": 0.90922624322121,
+  "first_pass_denial_rate": 0.09077375677878992,
+  "mean_days_in_ar": 35.038847854065246,
+  "revenue_leakage_rate_mature": 0.055324674575984924
+}

@@ -1,0 +1,17 @@
+issue,table,rows,handling,category
+Duplicate rows,patients,150,Deduplicated in staging (keep first),fixed
+Duplicate rows,eligibility_checks,164,Deduplicated in staging,fixed
+Duplicate rows,appointments,1267,Deduplicated in staging,fixed
+Duplicate rows,claims,857,Deduplicated in staging,fixed
+Payer spelling variants,patients,1508,Mapped to 4 canonical payer values,fixed
+Missing payer,patients,329,"Set to 'Unknown' (kept, flagged)",flagged
+UTC-format timestamps,appointments,19103,Converted to clinic-local time,fixed
+Orphan patient_id,appointments,393,Excluded from fact_appointment,quarantined
+Orphan provider_id,appointments,248,Excluded from fact_appointment,quarantined
+Appointment before patient exists,appointments,274,Excluded from fact_appointment,quarantined
+Orphan patient_id,prior_authorizations,17,Excluded from fact_prior_auth,quarantined
+Orphan appointment_id,claims,246,Excluded from fact_claim,quarantined
+paid_amount > allowed_amount,claims,83,Excluded from fact_claim,quarantined
+allowed_amount > billed_amount,claims,92,Excluded from fact_claim,quarantined
+Missing PHQ-9 total,intake,455,Left NULL (model handles missingness),flagged
+Missing GAD-7 total,intake,446,Left NULL (model handles missingness),flagged

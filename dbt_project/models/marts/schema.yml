@@ -1,0 +1,150 @@
+version: 2
+
+models:
+  - name: dim_clinic
+    columns:
+      - name: clinic_id
+        data_tests: [unique, not_null]
+
+  - name: dim_provider
+    columns:
+      - name: provider_id
+        data_tests: [unique, not_null]
+      - name: clinic_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_clinic')
+                field: clinic_id
+
+  - name: dim_patient
+    columns:
+      - name: patient_id
+        data_tests: [unique, not_null]
+      - name: clinic_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_clinic')
+                field: clinic_id
+      - name: payer_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [Medicaid, Medicare, Commercial, Self-pay, Unknown]
+      - name: experiment_arm
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [control, arm_a, arm_b]
+
+  - name: dim_date
+    columns:
+      - name: date_key
+        data_tests: [unique, not_null]
+      - name: date_day
+        data_tests: [unique, not_null]
+
+  - name: fact_appointment
+    columns:
+      - name: appointment_id
+        data_tests: [unique, not_null]
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_patient')
+                field: patient_id
+      - name: provider_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_provider')
+                field: provider_id
+      - name: clinic_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_clinic')
+                field: clinic_id
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [completed, no_show, cancelled, late_cancel]
+      - name: modality
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [telehealth, in_person]
+      - name: reminder_arm
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [standard, control, arm_a, arm_b]
+      - name: lead_bucket
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["0-1", "2-7", "8-14", "15-21", "22-30", "31+"]
+
+  - name: fact_prior_auth
+    columns:
+      - name: pa_id
+        data_tests: [unique, not_null]
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_patient')
+                field: patient_id
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [approved, denied, pending]
+
+  - name: fact_claim
+    columns:
+      - name: claim_id
+        data_tests: [unique, not_null]
+      - name: appointment_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fact_appointment')
+                field: appointment_id
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_patient')
+                field: patient_id
+      - name: submit_date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: claim_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [paid, denied, pending]

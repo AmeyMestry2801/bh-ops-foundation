@@ -1,0 +1,6 @@
+stage_order,stage,patients,pct_of_intake,pct_of_prev_stage
+1,Intake completed,15000,1.0,
+2,Appointment scheduled,13566,0.9044,0.9044
+3,First visit completed,13425,0.895,0.9896063688633349
+4,Claim submitted,13408,0.8938666666666667,0.998733705772812
+5,Claim paid,13203,0.8802,0.9847106205250596

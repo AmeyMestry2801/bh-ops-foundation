@@ -1,0 +1,191 @@
+{
+  "synthetic": true,
+  "generated_at": "2026-10-14T11:38:56",
+  "date_range": {
+    "data": [
+      "2025-01-01",
+      "2026-06-30"
+    ],
+    "experiment": [
+      "2025-10-01",
+      "2026-03-31"
+    ]
+  },
+  "row_counts": {
+    "raw": {
+      "clinics": 12,
+      "providers": 60,
+      "patients": 15150,
+      "intake": 15000,
+      "eligibility_checks": 16613,
+      "prior_authorizations": 5244,
+      "appointments": 127984,
+      "claims": 86540,
+      "experiment_assignments": 13059
+    },
+    "marts": {
+      "dim_date": 730,
+      "dim_clinic": 12,
+      "dim_provider": 60,
+      "dim_patient": 15000,
+      "fact_appointment": 125803,
+      "fact_prior_auth": 5227,
+      "fact_claim": 84639
+    }
+  },
+  "dbt": {
+    "models": 27,
+    "tests": 92,
+    "tests_passed": 88,
+    "tests_warn": 4,
+    "tests_failed": 0,
+    "note": "warnings are the 4 relationships tests on known injected orphan keys at the staging layer"
+  },
+  "pipeline": {
+    "mode": "full",
+    "total_seconds": 6.21,
+    "stage_seconds": {
+      "raw_load": 0.66,
+      "dbt_build": 5.44,
+      "dq_checks": 0.11
+    }
+  },
+  "data_quality": {
+    "issue_types_found": 16,
+    "fixed_or_quarantined": 13,
+    "flagged_only": 3,
+    "integrity_checks": 14,
+    "integrity_failed": 0,
+    "reconciliation_ok": true
+  },
+  "kpi_validation": {
+    "checks": 21,
+    "passed": 21
+  },
+  "headline_kpis": {
+    "no_show_rate": 0.213,
+    "late_cancel_rate": 0.0407,
+    "mean_days_intake_to_first_visit": 31.4594,
+    "median_days_intake_to_first_visit": 18.0,
+    "pa_sla_breach_rate": 0.212,
+    "pa_median_turnaround_hours": 95.7603,
+    "clean_claim_rate": 0.9092,
+    "first_pass_denial_rate": 0.0908,
+    "mean_days_in_ar": 35.0388,
+    "revenue_leakage_rate_mature": 0.0553
+  },
+  "experiment": {
+    "decisions": {
+      "arm_a": "SHIP",
+      "arm_b": "ITERATE"
+    },
+    "arm_a_vs_control_risk_difference": {
+      "estimate": -0.0335,
+      "ci_low": -0.0432,
+      "ci_high": -0.0237,
+      "p_raw": 1.5015773480716268e-11,
+      "p_holm": 4.5047320442148794e-11
+    },
+    "arm_b_vs_control_risk_difference": {
+      "estimate": -0.0192,
+      "ci_low": -0.0291,
+      "ci_high": -0.0094,
+      "p_raw": 0.0001324581336324,
+      "p_holm": 0.0002649162672649
+    },
+    "arm_a_vs_control_odds_ratio": {
+      "estimate": 0.8128,
+      "ci_low": 0.7653,
+      "ci_high": 0.8633,
+      "p_raw": 1.6164447033852978e-11,
+      "p_holm": 4.8493341101558937e-11
+    },
+    "planted_effects_pp": {
+      "arm_a": -3.0,
+      "arm_b": -1.5
+    },
+    "omnibus_randomization_p": 0.032,
+    "srm_p": 0.1141,
+    "design_effect": 1.346,
+    "note": "effects are planted by the generator; the project demonstrates the method"
+  },
+  "model": {
+    "final_model": "M1",
+    "promotion_gain_val": 0.0071,
+    "promotion_ci": [
+      -0.0001,
+      0.0134
+    ],
+    "promote_M2": false,
+    "test_pr_auc": 0.3871,
+    "test_pr_auc_ci": [
+      0.3739,
+      0.4008
+    ],
+    "test_roc_auc": 0.6714,
+    "test_brier": 0.1603,
+    "base_rate_pr_auc_M0": 0.2225,
+    "precision_at_top20pct": 0.4002,
+    "recall_at_top20pct": 0.3597,
+    "lift_at_top20pct": 1.798
+  },
+  "simulation": {
+    "A: uniform absolute reduction, model top 20%": {
+      "prevented": 208.9,
+      "ci": [
+        148.2,
+        269.6
+      ],
+      "calls_per_prevented": 29.9
+    },
+    "A: uniform absolute reduction, random 20%": {
+      "prevented": 208.9,
+      "ci": [
+        148.2,
+        269.6
+      ],
+      "calls_per_prevented": 29.9
+    },
+    "B: relative reduction, model top 20%": {
+      "prevented": 380.6,
+      "ci": [
+        276.2,
+        480.2
+      ],
+      "calls_per_prevented": 16.4
+    },
+    "B: relative reduction, random 20%": {
+      "prevented": 211.7,
+      "ci": [
+        153.6,
+        267.0
+      ],
+      "calls_per_prevented": 29.5
+    }
+  },
+  "tests": {
+    "pytest_passed": 29,
+    "pytest_failed": 0,
+    "pytest_skipped": 0
+  },
+  "tools_actually_run": {
+    "python": "3.13.3",
+    "duckdb": "1.5.6",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "shap": "0.53.0",
+    "dbt-core": "1.12.5",
+    "pytest": "run",
+    "jupyter nbconvert": "run",
+    "make": "pipeline target run"
+  },
+  "dashboard": {
+    "tool": "Excel",
+    "pages_built": 5,
+    "note": "filled from the command-line flag the author passed, not detected"
+  }
+}

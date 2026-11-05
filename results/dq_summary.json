@@ -1,0 +1,297 @@
+{
+  "generated_at": "2026-10-14T11:35:19",
+  "passed": true,
+  "reconciliation": [
+    {
+      "table": "clinics",
+      "raw": 12,
+      "staging": 12,
+      "mart": 12,
+      "duplicates_removed": 0,
+      "expected_duplicates": 0,
+      "mart_excluded": 0,
+      "expected_mart_excluded": 0,
+      "ok": true
+    },
+    {
+      "table": "providers",
+      "raw": 60,
+      "staging": 60,
+      "mart": 60,
+      "duplicates_removed": 0,
+      "expected_duplicates": 0,
+      "mart_excluded": 0,
+      "expected_mart_excluded": 0,
+      "ok": true
+    },
+    {
+      "table": "patients",
+      "raw": 15150,
+      "staging": 15000,
+      "mart": 15000,
+      "duplicates_removed": 150,
+      "expected_duplicates": 150,
+      "mart_excluded": 0,
+      "expected_mart_excluded": 0,
+      "ok": true
+    },
+    {
+      "table": "intake",
+      "raw": 15000,
+      "staging": 15000,
+      "mart": null,
+      "duplicates_removed": 0,
+      "expected_duplicates": 0,
+      "mart_excluded": null,
+      "expected_mart_excluded": null,
+      "ok": true
+    },
+    {
+      "table": "eligibility_checks",
+      "raw": 16613,
+      "staging": 16449,
+      "mart": null,
+      "duplicates_removed": 164,
+      "expected_duplicates": 164,
+      "mart_excluded": null,
+      "expected_mart_excluded": null,
+      "ok": true
+    },
+    {
+      "table": "prior_authorizations",
+      "raw": 5244,
+      "staging": 5244,
+      "mart": 5227,
+      "duplicates_removed": 0,
+      "expected_duplicates": 0,
+      "mart_excluded": 17,
+      "expected_mart_excluded": 17,
+      "ok": true
+    },
+    {
+      "table": "appointments",
+      "raw": 127984,
+      "staging": 126717,
+      "mart": 125803,
+      "duplicates_removed": 1267,
+      "expected_duplicates": 1267,
+      "mart_excluded": 914,
+      "expected_mart_excluded": 914,
+      "ok": true
+    },
+    {
+      "table": "claims",
+      "raw": 86540,
+      "staging": 85683,
+      "mart": 84639,
+      "duplicates_removed": 857,
+      "expected_duplicates": 857,
+      "mart_excluded": 1044,
+      "expected_mart_excluded": 1044,
+      "ok": true
+    },
+    {
+      "table": "experiment_assignments",
+      "raw": 13059,
+      "staging": 13059,
+      "mart": null,
+      "duplicates_removed": 0,
+      "expected_duplicates": 0,
+      "mart_excluded": null,
+      "expected_mart_excluded": null,
+      "ok": true
+    }
+  ],
+  "issues": [
+    {
+      "issue": "Duplicate rows",
+      "table": "patients",
+      "rows": 150,
+      "handling": "Deduplicated in staging (keep first)",
+      "category": "fixed"
+    },
+    {
+      "issue": "Duplicate rows",
+      "table": "eligibility_checks",
+      "rows": 164,
+      "handling": "Deduplicated in staging",
+      "category": "fixed"
+    },
+    {
+      "issue": "Duplicate rows",
+      "table": "appointments",
+      "rows": 1267,
+      "handling": "Deduplicated in staging",
+      "category": "fixed"
+    },
+    {
+      "issue": "Duplicate rows",
+      "table": "claims",
+      "rows": 857,
+      "handling": "Deduplicated in staging",
+      "category": "fixed"
+    },
+    {
+      "issue": "Payer spelling variants",
+      "table": "patients",
+      "rows": 1508,
+      "handling": "Mapped to 4 canonical payer values",
+      "category": "fixed"
+    },
+    {
+      "issue": "Missing payer",
+      "table": "patients",
+      "rows": 329,
+      "handling": "Set to 'Unknown' (kept, flagged)",
+      "category": "flagged"
+    },
+    {
+      "issue": "UTC-format timestamps",
+      "table": "appointments",
+      "rows": 19103,
+      "handling": "Converted to clinic-local time",
+      "category": "fixed"
+    },
+    {
+      "issue": "Orphan patient_id",
+      "table": "appointments",
+      "rows": 393,
+      "handling": "Excluded from fact_appointment",
+      "category": "quarantined"
+    },
+    {
+      "issue": "Orphan provider_id",
+      "table": "appointments",
+      "rows": 248,
+      "handling": "Excluded from fact_appointment",
+      "category": "quarantined"
+    },
+    {
+      "issue": "Appointment before patient exists",
+      "table": "appointments",
+      "rows": 274,
+      "handling": "Excluded from fact_appointment",
+      "category": "quarantined"
+    },
+    {
+      "issue": "Orphan patient_id",
+      "table": "prior_authorizations",
+      "rows": 17,
+      "handling": "Excluded from fact_prior_auth",
+      "category": "quarantined"
+    },
+    {
+      "issue": "Orphan appointment_id",
+      "table": "claims",
+      "rows": 246,
+      "handling": "Excluded from fact_claim",
+      "category": "quarantined"
+    },
+    {
+      "issue": "paid_amount > allowed_amount",
+      "table": "claims",
+      "rows": 83,
+      "handling": "Excluded from fact_claim",
+      "category": "quarantined"
+    },
+    {
+      "issue": "allowed_amount > billed_amount",
+      "table": "claims",
+      "rows": 92,
+      "handling": "Excluded from fact_claim",
+      "category": "quarantined"
+    },
+    {
+      "issue": "Missing PHQ-9 total",
+      "table": "intake",
+      "rows": 455,
+      "handling": "Left NULL (model handles missingness)",
+      "category": "flagged"
+    },
+    {
+      "issue": "Missing GAD-7 total",
+      "table": "intake",
+      "rows": 446,
+      "handling": "Left NULL (model handles missingness)",
+      "category": "flagged"
+    }
+  ],
+  "issue_types_found": 16,
+  "issue_types_fixed_or_quarantined": 13,
+  "issue_types_flagged_only": 3,
+  "issue_rows_total_with_overlap": 25632,
+  "integrity_checks": [
+    {
+      "check": "fact_appointment duplicate keys",
+      "violations": 0
+    },
+    {
+      "check": "fact_claim duplicate keys",
+      "violations": 0
+    },
+    {
+      "check": "fact_prior_auth duplicate keys",
+      "violations": 0
+    },
+    {
+      "check": "dim_patient duplicate keys",
+      "violations": 0
+    },
+    {
+      "check": "fact_appointment -> dim_patient orphans",
+      "violations": 0
+    },
+    {
+      "check": "fact_appointment -> dim_provider orphans",
+      "violations": 0
+    },
+    {
+      "check": "fact_appointment -> dim_date orphans",
+      "violations": 0
+    },
+    {
+      "check": "fact_claim -> fact_appointment orphans",
+      "violations": 0
+    },
+    {
+      "check": "fact_claim -> dim_patient orphans",
+      "violations": 0
+    },
+    {
+      "check": "fact_prior_auth -> dim_patient orphans",
+      "violations": 0
+    },
+    {
+      "check": "appointments before patient created",
+      "violations": 0
+    },
+    {
+      "check": "claims violating paid <= allowed <= billed",
+      "violations": 0
+    },
+    {
+      "check": "prior auth decided before submitted",
+      "violations": 0
+    },
+    {
+      "check": "negative lead_days",
+      "violations": 0
+    }
+  ],
+  "integrity_failed": 0,
+  "appt_date_range": [
+    "2025-01-06",
+    "2026-06-30"
+  ],
+  "dbt": {
+    "pass": 115,
+    "warn": 4,
+    "error": 0,
+    "skip": 0,
+    "no_op": 0,
+    "reused": 0,
+    "total": 119,
+    "models": 27,
+    "tests": 92
+  }
+}

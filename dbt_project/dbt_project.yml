@@ -1,0 +1,21 @@
+name: bh_ops
+version: "1.0.0"
+config-version: 2
+profile: bh_ops
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+
+vars:
+  capacity_multiplier: 1.7
+  leakage_max_month: "2026-03"
+
+models:
+  bh_ops:
+    staging:
+      +materialized: table
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

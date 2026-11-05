@@ -1,0 +1,8 @@
+bh_ops:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../warehouse/ops.duckdb
+      schema: main
+      threads: 1

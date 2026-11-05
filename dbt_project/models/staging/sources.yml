@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: clinics
+      - name: providers
+      - name: patients
+      - name: intake
+      - name: eligibility_checks
+      - name: prior_authorizations
+      - name: appointments
+      - name: claims
+      - name: experiment_assignments

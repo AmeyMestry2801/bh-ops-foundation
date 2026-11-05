@@ -1,0 +1,7 @@
+eligibility_gate,pa_gate,patients,scheduled_patients,scheduled_rate
+blocked,no_pa_needed,520,433,0.8326923076923077
+blocked,pa_denied,53,30,0.5660377358490566
+blocked,pa_not_denied,267,219,0.8202247191011236
+clear,no_pa_needed,9253,8555,0.9245650059440181
+clear,pa_denied,702,449,0.6396011396011396
+clear,pa_not_denied,4205,3880,0.9227110582639715

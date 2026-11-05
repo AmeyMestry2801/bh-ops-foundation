@@ -1,0 +1,15 @@
+pandas
+numpy
+duckdb
+dbt-core
+dbt-duckdb
+scipy
+statsmodels
+scikit-learn
+xgboost
+shap
+matplotlib
+seaborn
+pytest
+jupyter
+ipykernel

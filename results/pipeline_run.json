@@ -1,0 +1,46 @@
+{
+  "run_at": "2026-10-14T11:35:19",
+  "mode": "full",
+  "stage_seconds": {
+    "raw_load": 0.66,
+    "dbt_build": 5.44,
+    "dq_checks": 0.11
+  },
+  "total_seconds": 6.21,
+  "raw_row_counts": {
+    "clinics": 12,
+    "providers": 60,
+    "patients": 15150,
+    "intake": 15000,
+    "eligibility_checks": 16613,
+    "prior_authorizations": 5244,
+    "appointments": 127984,
+    "claims": 86540,
+    "experiment_assignments": 13059
+  },
+  "raw_load_modes": {
+    "clinics": "full",
+    "providers": "full",
+    "patients": "full",
+    "intake": "full",
+    "eligibility_checks": "full",
+    "prior_authorizations": "full",
+    "appointments": "full",
+    "claims": "full",
+    "experiment_assignments": "full"
+  },
+  "dbt": {
+    "pass": 115,
+    "warn": 4,
+    "error": 0,
+    "skip": 0,
+    "no_op": 0,
+    "reused": 0,
+    "total": 119,
+    "models": 27,
+    "tests": 92
+  },
+  "dq_passed": true,
+  "dq_issue_types_found": 16,
+  "dq_integrity_failed": 0
+}

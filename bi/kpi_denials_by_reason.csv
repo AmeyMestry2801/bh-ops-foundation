@@ -1,0 +1,35 @@
+payer_type,denial_code,denial_reason,payer_claims,denied_claims,denial_rate,recovered_claims,allowed_amount_denied
+Commercial,CO-16,Missing info / billing error,34033,836,0.024564393382893075,284,124200.1
+Commercial,CO-50,Not medically necessary,34033,571,0.016777833279464048,189,85872.29
+Commercial,CO-4,Procedure / modifier mismatch,34033,444,0.01304616107895278,140,65985.13
+Commercial,CO-27,Coverage terminated,34033,377,0.011077483618840537,110,55904.38
+Commercial,CO-29,Timely filing expired,34033,320,0.009402638615461464,101,48803.92
+Commercial,CO-197,Prior authorization absent,34033,274,0.008051009314488879,76,39054.56
+Commercial,CO-18,Duplicate claim,34033,227,0.006669996767842976,70,33586.24
+Medicaid,CO-16,Missing info / billing error,27561,879,0.03189289213018395,268,87293.46
+Medicaid,CO-50,Not medically necessary,27561,548,0.019883168244983852,182,53765.68
+Medicaid,CO-4,Procedure / modifier mismatch,27561,468,0.016980515946446065,161,45358.38
+Medicaid,CO-27,Coverage terminated,27561,458,0.016617684409128843,133,44804.94
+Medicaid,CO-29,Timely filing expired,27561,348,0.012626537498639382,123,34127.85
+Medicaid,CO-197,Prior authorization absent,27561,270,0.009796451507565038,90,26687.02
+Medicaid,CO-18,Duplicate claim,27561,259,0.009397336816516092,82,25763.43
+Medicare,CO-16,Missing info / billing error,10729,245,0.02283530617951347,78,31359.32
+Medicare,CO-50,Not medically necessary,10729,159,0.014819647683847517,43,21190.41
+Medicare,CO-27,Coverage terminated,10729,123,0.01146425575542921,47,16253.69
+Medicare,CO-4,Procedure / modifier mismatch,10729,107,0.009972970453909963,39,13651.75
+Medicare,CO-29,Timely filing expired,10729,94,0.008761301146425576,36,12154.25
+Medicare,CO-18,Duplicate claim,10729,59,0.005499114549352223,20,7216.32
+Medicare,CO-197,Prior authorization absent,10729,24,0.0022369279522788704,9,3333.44
+Self-pay,CO-16,Missing info / billing error,10524,123,0.011687571265678449,46,13903.71
+Self-pay,CO-50,Not medically necessary,10524,97,0.009217027746104143,29,10918.38
+Self-pay,CO-27,Coverage terminated,10524,62,0.00589129608513873,26,7325.04
+Self-pay,CO-4,Procedure / modifier mismatch,10524,60,0.005701254275940707,16,6846.4
+Self-pay,CO-29,Timely filing expired,10524,52,0.0049410870391486126,14,6213.2
+Self-pay,CO-18,Duplicate claim,10524,33,0.003135689851767389,8,3641.97
+Unknown,CO-16,Missing info / billing error,1792,58,0.03236607142857143,17,6704.52
+Unknown,CO-4,Procedure / modifier mismatch,1792,23,0.012834821428571428,9,2902.5
+Unknown,CO-29,Timely filing expired,1792,21,0.01171875,8,2391.49
+Unknown,CO-50,Not medically necessary,1792,20,0.011160714285714286,5,2459.27
+Unknown,CO-197,Prior authorization absent,1792,19,0.010602678571428572,3,2052.94
+Unknown,CO-27,Coverage terminated,1792,14,0.0078125,7,1755.16
+Unknown,CO-18,Duplicate claim,1792,11,0.006138392857142857,4,1122.05

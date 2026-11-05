@@ -1,0 +1,22 @@
+kpi,rows,status
+no-show / late-cancel (monthly),18,PASS
+fill rate (monthly),18,PASS
+intake -> first visit (per patient),15000,PASS
+intake -> first visit (monthly),15,PASS
+patient funnel,5,PASS
+gate conversion,6,PASS
+prior-auth turnaround / SLA (monthly),32,PASS
+clean-claim / denial (monthly),18,PASS
+denials by reason and payer,34,PASS
+days in A/R (monthly),18,PASS
+revenue leakage (monthly),15,PASS
+headline: no_show_rate,1,PASS
+headline: late_cancel_rate,1,PASS
+headline: mean_days_intake_to_first_visit,1,PASS
+headline: median_days_intake_to_first_visit,1,PASS
+headline: pa_sla_breach_rate,1,PASS
+headline: pa_median_turnaround_hours,1,PASS
+headline: clean_claim_rate,1,PASS
+headline: first_pass_denial_rate,1,PASS
+headline: mean_days_in_ar,1,PASS
+headline: revenue_leakage_rate_mature,1,PASS

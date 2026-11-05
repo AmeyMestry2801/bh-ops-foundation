@@ -1,0 +1,58 @@
+{
+  "seed": 42,
+  "synthetic": true,
+  "raw_row_counts": {
+    "clinics": 12,
+    "providers": 60,
+    "patients": 15150,
+    "intake": 15000,
+    "eligibility_checks": 16613,
+    "prior_authorizations": 5244,
+    "appointments": 127984,
+    "claims": 86540,
+    "experiment_assignments": 13059
+  },
+  "clean_row_counts": {
+    "patients": 15000,
+    "appointments": 126717,
+    "claims": 85683
+  },
+  "calibrated_logit_intercept": -2.3420900349057883,
+  "mean_p0_baseline_noshow": 0.21999999999999997,
+  "planted_effect_pp": {
+    "arm_a": 3.0,
+    "arm_b": 1.5
+  },
+  "realized_mean_effect_pp_on_probability": {
+    "arm_a": 2.9999999999999996,
+    "arm_b": 1.5000000000000002
+  },
+  "dirt_injected": {
+    "patients_payer_missing": 329,
+    "patients_payer_variants": 1508,
+    "patients_duplicate_rows": 150,
+    "intake_phq9_total_missing": 455,
+    "intake_gad7_total_missing": 446,
+    "eligibility_duplicate_rows": 164,
+    "prior_auth_orphan_patient_id": 17,
+    "appointments_before_patient_exists": 274,
+    "appointments_utc_timestamp_rows": 19103,
+    "appointments_orphan_patient_id": 393,
+    "appointments_orphan_provider_id": 248,
+    "appointments_duplicate_rows": 1267,
+    "claims_paid_gt_allowed": 83,
+    "claims_allowed_gt_billed": 92,
+    "claims_orphan_appointment_id": 246,
+    "claims_duplicate_rows": 857
+  },
+  "dirt_rates_assumed": {
+    "dup_rate": 0.01,
+    "missing_payer_rate": 0.02,
+    "payer_variant_rate": 0.1,
+    "tz_utc_rate": 0.15,
+    "orphan_rate": 0.003,
+    "appt_before_intake_rate": 0.002,
+    "amount_violation_rate": 0.002,
+    "missing_score_rate": 0.03
+  }
+}

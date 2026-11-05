@@ -1,0 +1,4 @@
+stage,seconds
+raw_load,0.66
+dbt_build,5.44
+dq_checks,0.11

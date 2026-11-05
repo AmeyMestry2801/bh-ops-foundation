@@ -1,0 +1,173 @@
+{
+  "synthetic": true,
+  "n_rows": {
+    "total": 80966,
+    "train": 40052,
+    "val": 9694,
+    "test": 31220
+  },
+  "base_rate": {
+    "train": 0.22161190452411864,
+    "val": 0.21652568599133484,
+    "test": 0.22254964766175528
+  },
+  "selection": {
+    "logit_grid": [
+      {
+        "C": 0.001,
+        "val_pr_auc": 0.3759219793330636
+      },
+      {
+        "C": 0.01,
+        "val_pr_auc": 0.37840161761455693
+      },
+      {
+        "C": 0.1,
+        "val_pr_auc": 0.37860971242803404
+      },
+      {
+        "C": 1,
+        "val_pr_auc": 0.3786442839196163
+      },
+      {
+        "C": 10,
+        "val_pr_auc": 0.3786657292157137
+      }
+    ],
+    "best_C": 10,
+    "xgb_best_params": {
+      "colsample_bytree": 0.6,
+      "learning_rate": 0.04029695576831731,
+      "max_depth": 6,
+      "min_child_weight": 20,
+      "n_estimators": 100,
+      "reg_lambda": 0.4678719265016201,
+      "subsample": 1.0
+    },
+    "xgb_search_val_pr_auc": 0.3857963885004546,
+    "xgb_draws": 25
+  },
+  "promotion": {
+    "val_pr_auc_M0": 0.21652568599133484,
+    "val_pr_auc_M1": 0.3786657292157137,
+    "val_pr_auc_M2": 0.3857963885004546,
+    "gain_M2_minus_M1": 0.007130659284740937,
+    "ci95_low": -0.00014997421561571965,
+    "ci95_high": 0.013440651319675215,
+    "rule": "promote M2 if gain >= 0.02 and CI lower bound > 0",
+    "promote_M2": false,
+    "final_model": "M1"
+  },
+  "test_metrics": [
+    {
+      "model": "M0",
+      "final": false,
+      "pr_auc": 0.22254964766175528,
+      "roc_auc": 0.5,
+      "brier": 0.1730250226203512,
+      "pr_auc_ci_low": 0.21777557090081498,
+      "pr_auc_ci_high": 0.2274622144289249,
+      "precision_at_20pct": NaN,
+      "recall_at_20pct": NaN,
+      "lift_at_20pct": NaN
+    },
+    {
+      "model": "M1",
+      "final": true,
+      "pr_auc": 0.3870561479384488,
+      "roc_auc": 0.6714000674897697,
+      "brier": 0.16032719797419795,
+      "pr_auc_ci_low": 0.37385547131817737,
+      "pr_auc_ci_high": 0.4007945653757119,
+      "precision_at_20pct": 0.40022421524663676,
+      "recall_at_20pct": 0.3596718480138169,
+      "lift_at_20pct": 1.7983592400690847
+    },
+    {
+      "model": "M2",
+      "final": false,
+      "pr_auc": 0.39524594495036947,
+      "roc_auc": 0.6706821733508436,
+      "brier": 0.15971219539642334,
+      "pr_auc_ci_low": 0.38294042641696113,
+      "pr_auc_ci_high": 0.40954625021123653,
+      "precision_at_20pct": 0.40566944266495836,
+      "recall_at_20pct": 0.36456534254461714,
+      "lift_at_20pct": 1.8228267127230857
+    }
+  ],
+  "test_diff_M2_M1": {
+    "pr_auc_M2_minus_M1": 0.008189797011920685,
+    "ci95": [
+      0.00373957274615549,
+      0.011650098847674544
+    ],
+    "note": "informational only; the decision used validation"
+  },
+  "planted_cell_check": {
+    "planted_cell": {
+      "n": 891,
+      "observed": 0.5993265993265994,
+      "mean_pred_M1": 0.4384923522715364,
+      "mean_pred_M2": 0.5179141163825989
+    },
+    "everyone_else": {
+      "n": 30329,
+      "observed": 0.21148076098783342,
+      "mean_pred_M1": 0.2192190291496295,
+      "mean_pred_M2": 0.21634238958358765
+    }
+  },
+  "shap_method": "exact linear SHAP (coefficient x centered feature), log-odds scale",
+  "simulation": {
+    "n_resolved": 31220,
+    "n_called": 6244,
+    "observed_no_shows_among_called": 2499,
+    "observed_no_shows_total": 6948,
+    "arm_a_rd": -0.0334592927437384,
+    "arm_a_rd_ci": [
+      -0.0431779442791194,
+      -0.0237406412083574
+    ],
+    "arm_a_rr": 0.8476867286133182,
+    "arm_a_rr_ci": [
+      0.8078602641445699,
+      0.88947658618664
+    ],
+    "rows": [
+      {
+        "scenario": "A: uniform absolute reduction, model top 20%",
+        "prevented": 208.91982389190255,
+        "prevented_low": 148.2365637049836,
+        "prevented_high": 269.6030840788215,
+        "per_1000_resolved": 6.691858548747679,
+        "calls_per_prevented": 29.887063293862987
+      },
+      {
+        "scenario": "A: uniform absolute reduction, random 20%",
+        "prevented": 208.91982389190255,
+        "prevented_low": 148.2365637049836,
+        "prevented_high": 269.6030840788215,
+        "per_1000_resolved": 6.691858548747679,
+        "calls_per_prevented": 29.887063293862987
+      },
+      {
+        "scenario": "B: relative reduction, model top 20%",
+        "prevented": 380.6308651953179,
+        "prevented_low": 276.1980111195865,
+        "prevented_high": 480.1571999027198,
+        "per_1000_resolved": 12.19189190247655,
+        "calls_per_prevented": 16.404344920362508
+      },
+      {
+        "scenario": "B: relative reduction, random 20%",
+        "prevented": 211.65452191893306,
+        "prevented_low": 153.58333583504498,
+        "prevented_high": 266.99737694470565,
+        "per_1000_resolved": 6.77945297626307,
+        "calls_per_prevented": 29.50090526481427
+      }
+    ]
+  },
+  "runtime_seconds": 15.2
+}
